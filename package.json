@@ -2,7 +2,7 @@
   "name": "apidolarvenezuela",
   "version": "1.0.0",
   "description": "API construida en tyscript y node con el proposito de realizar consultas de valor del banco central de venezuela y el mercado paralelo",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
     "start": "node build/index.js",
