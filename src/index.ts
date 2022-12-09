@@ -1,7 +1,7 @@
 import express from 'express'
 import api from './routes'
 const app=express()
-const PORT=3000
+const PORT = process.env.PORT || 3001
 app.use(express.json())//middleweware que se encarga de convertir la req.body en unJSON
 app.use('/api',api)
 
