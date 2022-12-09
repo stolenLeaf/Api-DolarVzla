@@ -4,12 +4,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const routes_1 = __importDefault(require("./routes"));
 const app = (0, express_1.default)();
-app.use(express_1.default.json()); //middleweware que se encarga de convertir la req.body en unJSON
 const PORT = 3000;
-app.get('/ping', (_req, res) => {
-    console.log('prueba');
-    res.send('pong');
+app.use(express_1.default.json()); //middleweware que se encarga de convertir la req.body en unJSON
+app.use('/api', routes_1.default);
+app.use('/', (_req, res) => {
+    res.json({
+        mensaje: 'hola mundo'
+    });
 });
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);
