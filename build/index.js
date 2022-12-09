@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const routes_1 = __importDefault(require("./routes"));
 const app = (0, express_1.default)();
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;
 app.use(express_1.default.json()); //middleweware que se encarga de convertir la req.body en unJSON
 app.use('/api', routes_1.default);
 app.use('/', (_req, res) => {
@@ -17,3 +17,4 @@ app.use('/', (_req, res) => {
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);
 });
+exports.default = app;
